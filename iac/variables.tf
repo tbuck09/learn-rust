@@ -82,20 +82,6 @@ variable "user_data" {
       sudo apt upgrade
       sudo DEBIAN_FRONTEND=noninteractive apt install build-essential -y
       echo "*** Completed Installing Rust and dependencies"
-
-      # Test Rust
-      echo "*** Testing Rust"
-      mkdir $HOME/projects
-      mkdir $HOME/projects/hello_world
-      cd $HOME/projects/hello_world
-      touch hello_world.rs
-      echo "fn main() {" >> hello_world.rs
-      echo "  println!(\"Congratulations! Your Rust program works.\");" >> hello_world.rs
-      echo "}" >> hello_world.rs
-      rustc hello_world.rs
-      ./hello_world
-    RUST_EOF
-    echo "*** Completed Testing Rust"
   EOF
 }
 
